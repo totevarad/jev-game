@@ -1,0 +1,196 @@
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px) rotate(-1deg); }
+  50% { transform: translateX(10px) rotate(1deg); }
+  75% { transform: translateX(-10px) rotate(-1deg); }
+  100% { transform: translateX(0); }
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-container.shake {
+  animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Left Panel - Gameplay */
+.gameplay-panel {
+  flex: 0 0 35%; /* 35% width */
+  min-width: 300px;
+  background-color: var(--bg-dark);
+  border-right: 1px solid var(--track-border);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: inset -10px 0 20px rgba(0,0,0,0.2);
+}
+
+.track-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  background: repeating-linear-gradient(
+    0deg,
+    var(--bg-dark) 0%,
+    var(--bg-dark) 49%,
+    #1e293b 50%,
+    #1e293b 100%
+  );
+  background-size: 100% 100px;
+  animation: move-bg 1s linear infinite;
+}
+
+@keyframes move-bg {
+  from { background-position: 0 0; }
+  to { background-position: 0 100px; }
+}
+
+.track-lanes {
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  background-color: var(--track-bg);
+  border-left: 4px solid var(--text-muted);
+  border-right: 4px solid var(--text-muted);
+  position: relative;
+}
+
+.lane {
+  flex: 1;
+  border-right: 2px dashed var(--track-border);
+  position: relative;
+}
+.lane:last-child {
+  border-right: none;
+}
+
+/* Player Car */
+.player-car {
+  position: absolute;
+  width: 50px;
+  background-color: var(--car-color);
+  border-radius: 8px;
+  box-shadow: 0 0 15px var(--car-color);
+  transition: left 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 10;
+}
+
+/* Obstacles */
+.obstacle {
+  position: absolute;
+  width: 40px;
+  background-color: var(--danger);
+  border-radius: 8px;
+  box-shadow: 0 0 15px var(--danger);
+  z-index: 5;
+}
+
+.obstacle.collided {
+  background-color: #f87171;
+  box-shadow: 0 0 30px var(--danger);
+  opacity: 0.7;
+}
+
+.speed-control {
+  height: 80px;
+  background-color: var(--bg-panel);
+  border-top: 1px solid var(--track-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+
+.speed-control button {
+  background-color: var(--primary-accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.speed-control button:hover {
+  background-color: #2563eb;
+}
+.speed-control button:active {
+  transform: scale(0.95);
+}
+
+.speed-control span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Right Panel - Dashboard */
+.dashboard-panel {
+  flex: 1;
+  background-color: var(--bg-darker);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff, var(--primary-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.metric-card {
+  background-color: var(--bg-panel);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--track-border);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 15px var(--primary-glow);
+}
+
+.metric-title {
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}

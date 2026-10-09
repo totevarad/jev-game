@@ -1,0 +1,42 @@
+:root {
+  /* Colors */
+  --bg-dark: #0f172a;
+  --bg-darker: #020617;
+  --bg-panel: #1e293b;
+  --primary-accent: #3b82f6; /* Blue */
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --track-bg: #334155;
+  --track-border: #475569;
+  --car-color: #f59e0b;
+  --danger: #ef4444;
+  
+  /* Fonts */
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-darker);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}

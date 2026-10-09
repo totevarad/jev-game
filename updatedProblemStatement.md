@@ -1,0 +1,3 @@
+Go through the entire repo and understand what this game is and how it is controlled. The objective now is to control this game through an AI model. Here, we are using an laya model, which will predict whether we want to keep going in a straight line, go to the right, or go to the left.
+
+There is an example in this jev folder: a Python file and response.txt. Based on that, update that code and also integrate that code into the existing game. Integrate it in such a way that it will be controlled through this AI model or code, and we have to run it to play. Basically, the AI will play the game. The game will now be an infinite game. As soon as we start the play button, the AI will start playing, and if you crash it, it will just increment the crashes and keep on playing. 

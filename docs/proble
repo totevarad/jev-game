@@ -1,0 +1,35 @@
+# Problem Statement: Minimalist Street Racer Browser Game
+
+## Overview
+Develop a single-player, minimalist street-racing web game playable in the browser on desktop devices. The application should be built using React or Next.js and feature a clean, intuitive user interface divided into two main panels: gameplay and analytics.
+
+## Application Layout
+The application window should be split horizontally into two primary panels:
+1.  **Gameplay Panel (Left Side):** Occupies 30% to 40% of the screen width.
+2.  **Dashboard/Metrics Panel (Right Side):** Occupies the remaining 60% to 70% of the screen width.
+
+## Core Mechanics & Features
+
+### 1. Gameplay Panel (Left Side)
+*   **Track System:** The playable area consists of three parallel vertical tracks.
+*   **Player Character:** The player controls a single car that can move horizontally between the three tracks to dodge incoming objects.
+*   **Obstacles:** Objects/obstacles will spawn randomly at the top of the tracks and move downwards towards the player.
+*   **Speed Configuration:** A control panel at the bottom of the game area allows the user to configure the game's speed dynamically.
+
+### 2. Dashboard/Metrics Panel (Right Side)
+This panel displays real-time statistics and metrics related to the current game session, updating as the game progresses.
+*   **Distance Covered:** A metric tracking how far the player has traveled (based on time and current speed).
+*   **Crashes (Collisions):** A counter indicating the number of times the player's car has collided with an obstacle.
+*   **Additional Metrics:** E.g., Current Speed Multiplier, Score, Time Elapsed.
+
+## Technical Requirements
+*   **Framework:** React with Vite.
+*   **Target Device:** Desktop browsers.
+*   **UI/UX:** Minimalist, sleek design with Vanilla CSS and animations.
+*   **Controls:** Keyboard only (Left and Right arrows).
+
+## Next Steps
+1.  Initialize the Vite React project repository.
+2.  Implement the split-pane layout and basic UI skeleton.
+3.  Develop the game engine/loop for the 3-track system. Note: Collisions increment the crash counter but do not stop the game.
+4.  Implement the metrics tracking dashboard.
