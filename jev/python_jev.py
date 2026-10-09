@@ -21,16 +21,7 @@ payload = {
                 "sales": "pricing, new plans",
                 "other": "everything else",
             },
-        },
-        "refund": {
-            "type": "noul",
-            "instructions": "Does the customer ask for a refund?",
-        },
-        "urgency": {
-            "type": "score",
-            "instructions": "How urgent is this?",
-            "criteria": ["not urgent", "soon", "today"],
-        },
+        }
     },
 }
 
